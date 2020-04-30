@@ -22,7 +22,7 @@ class Api::V1::PeopleController < Api::V1::BaseController
 
   def update
     if @person.update(person_params)
-      render json: @person, status: :updated
+      render json: @person, status: :accepted
     else
       render json: @person.errors.full_messages, status: :unprocessable_entity
     end

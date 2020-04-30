@@ -22,7 +22,7 @@ class Api::V1::MoviesController < Api::V1::BaseController
 
   def update
     if @movie.update(movie_params)
-      render json: @movie, status: :updated
+      render json: @movie, status: :accepted
     else
       render json: @movie.errors.full_messages, status: :unprocessable_entity
     end
