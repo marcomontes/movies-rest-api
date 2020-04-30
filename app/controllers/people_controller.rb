@@ -23,7 +23,6 @@ class PeopleController < ApplicationController
     end
   end
 
-
   def update
     if @person.update(person_params)
       redirect_to people_url, notice: 'Person was successfully updated.'
