@@ -1,4 +1,5 @@
 class Api::V1::PeopleController < Api::V1::BaseController
+  before_action :authenticate_api_user!, only: [:create, :update, :destroy]
   before_action :set_person, only: [:show, :edit, :update, :destroy]
 
   def index

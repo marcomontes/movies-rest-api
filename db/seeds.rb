@@ -11,3 +11,5 @@ Person.create(first_name: 'Tim',    last_name: 'Sanders', movies_as_producer: [l
 Person.create(first_name: 'Elijah',  last_name: 'Wood',     aliases: ['Frodo', 'Hobbit'],       movies_as_actor: [lotr_1, lotr_2, lotr_3])
 Person.create(first_name: 'Ian',     last_name: 'McKellen', aliases: ['Gandalf', 'The Wizard'], movies_as_actor: [lotr_1, lotr_2, lotr_3])
 Person.create(first_name: 'Orlando', last_name: 'Bloom',    aliases: ['Legolas', 'Elve'],       movies_as_actor: [lotr_1, lotr_2, lotr_3])
+
+User.create(email: 'admin@admin.com', password: '4DM1N_W3B', password_confirmation: '4DM1N_W3B')
