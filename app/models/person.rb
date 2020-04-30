@@ -5,6 +5,8 @@ class Person < ApplicationRecord
   has_many :movies_as_director, -> { where(roles: { name: 'Director' })}, through: :roles, source: :movie
   has_many :movies_as_producer, -> { where(roles: { name: 'Producer' })}, through: :roles, source: :movie
 
+  validates :first_name, :last_name, presence: true
+
   def alias_names
     aliases.join(',')
   end
