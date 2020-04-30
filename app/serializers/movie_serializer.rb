@@ -2,7 +2,7 @@ class MovieSerializer < ActiveModel::Serializer
   attributes :id, :title, :release_year, :casting, :directors, :producers
   
   def release_year
-    'XXYY'
+    self.object.release_year.roman
   end
 
   def casting

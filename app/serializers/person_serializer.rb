@@ -3,19 +3,19 @@ class PersonSerializer < ActiveModel::Serializer
 
   def movies_as_actor
     self.object.movies_as_actor.map do |m|
-      { title: m.title, release_year: m.release_year }
+      { title: m.title, release_year: m.release_year.roman }
     end
   end
 
   def movies_as_director
     self.object.movies_as_director.map do |m|
-      { title: m.title, release_year: m.release_year }
+      { title: m.title, release_year: m.release_year.roman }
     end
   end
 
   def movies_as_producer
     self.object.movies_as_producer.map do |m|
-      { title: m.title, release_year: m.release_year }
+      { title: m.title, release_year: m.release_year.roman }
     end
   end
 end

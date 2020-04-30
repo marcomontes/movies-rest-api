@@ -18,7 +18,7 @@
     <% @movies.each do |movie| %>
       <tr>
         <td><%= movie.title %></td>
-        <td><%= movie.release_year %></td>
+        <td><%= movie.release_year.roman %></td>
         <td><%= movie_casting(movie) %></td>
         <td><%= movie_directors(movie) %></td>
         <td><%= movie_producers(movie) %></td>
