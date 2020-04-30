@@ -1,0 +1,47 @@
+<%= form_with(model: person, local: true) do |form| %>
+  <% if person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+      <ul>
+      <% person.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :aliases %>
+    <%= form.select :aliases, @person.aliases, { include_blank: true }, { multiple: true, class: 'select2-tags form-control' } %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label 'Movies as Actor/Actress' %>
+    <%= form.select :movies_as_actor_ids, movies_for_select, {}, { multiple: true, class: 'select2 form-control' }  %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label 'Movies as Director' %>
+    <%= form.select :movies_as_director_ids, movies_for_select, {}, { multiple: true, class: 'select2 form-control' }  %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label 'Movies as Producer' %>
+    <%= form.select :movies_as_producer_ids, movies_for_select, {}, { multiple: true, class: 'select2 form-control' }  %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
