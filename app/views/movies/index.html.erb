@@ -1,19 +1,23 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-sm">
+    <h3>MOVIES</h3>
+  </div>
+  <div class="col-sm text-right">
+    <%= link_to 'NEW MOVIE', new_movie_path, class: "btn btn-success" %>
+  </div>
+</div>
 
-<h1>Movies</h1>
-
-<table border=1>
-  <thead>
+<table class="table">
+  <thead class="thead-dark">
     <tr>
-      <th>Title</th>
-      <th>Release year</th>
-      <th>Casting</th>
-      <th>Directors</th>
-      <th>Producers</th>
+      <th>TITLE</th>
+      <th>YEAR</th>
+      <th>CASTIING</th>
+      <th>DIRECTORS</th>
+      <th>PRODUCERS</th>
       <th colspan="2"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @movies.each do |movie| %>
       <tr>
@@ -22,13 +26,9 @@
         <td><%= movie_casting(movie) %></td>
         <td><%= movie_directors(movie) %></td>
         <td><%= movie_producers(movie) %></td>
-        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_movie_path(movie), class: "btn btn-outline-secondary btn-sm" %></td>
+        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Movie', new_movie_path %>
