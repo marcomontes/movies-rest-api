@@ -1,7 +1,12 @@
 require 'test_helper'
 
 class PeopleControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
+    get '/users/sign_in'
+    sign_in users(:one)
+    post user_session_url
     @person = people(:one)
   end
 
@@ -17,15 +22,10 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
 
   test "should create person" do
     assert_difference('Person.count') do
-      post people_url, params: { person: { aliases: @person.aliases, first_name: @person.first_name, last_name: @person.last_name, type: @person.type } }
+      post people_url, params: { person: { aliases: @person.aliases, first_name: @person.first_name, last_name: @person.last_name } }
     end
 
-    assert_redirected_to person_url(Person.last)
-  end
-
-  test "should show person" do
-    get person_url(@person)
-    assert_response :success
+    assert_redirected_to people_url
   end
 
   test "should get edit" do
@@ -34,8 +34,8 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update person" do
-    patch person_url(@person), params: { person: { aliases: @person.aliases, first_name: @person.first_name, last_name: @person.last_name, type: @person.type } }
-    assert_redirected_to person_url(@person)
+    patch person_url(@person), params: { person: { aliases: @person.aliases, first_name: @person.first_name, last_name: @person.last_name } }
+    assert_redirected_to people_url
   end
 
   test "should destroy person" do

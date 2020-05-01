@@ -1,7 +1,12 @@
 require 'test_helper'
 
 class MoviesControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
+    get '/users/sign_in'
+    sign_in users(:one)
+    post user_session_url
     @movie = movies(:one)
   end
 
@@ -20,12 +25,7 @@ class MoviesControllerTest < ActionDispatch::IntegrationTest
       post movies_url, params: { movie: { release_year: @movie.release_year, title: @movie.title } }
     end
 
-    assert_redirected_to movie_url(Movie.last)
-  end
-
-  test "should show movie" do
-    get movie_url(@movie)
-    assert_response :success
+    assert_redirected_to movies_url
   end
 
   test "should get edit" do
@@ -35,7 +35,7 @@ class MoviesControllerTest < ActionDispatch::IntegrationTest
 
   test "should update movie" do
     patch movie_url(@movie), params: { movie: { release_year: @movie.release_year, title: @movie.title } }
-    assert_redirected_to movie_url(@movie)
+    assert_redirected_to movies_url
   end
 
   test "should destroy movie" do

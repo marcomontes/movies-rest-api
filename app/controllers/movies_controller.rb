@@ -43,9 +43,9 @@ class MoviesController < ApplicationController
     end
 
     def clean_params
-      params[:movie][:casting_ids].reject!(&:empty?)
-      params[:movie][:director_ids].reject!(&:empty?)
-      params[:movie][:producer_ids].reject!(&:empty?)
+      params[:movie][:casting_ids].reject!(&:empty?)  if params[:movie][:casting_ids]
+      params[:movie][:director_ids].reject!(&:empty?) if params[:movie][:director_ids]
+      params[:movie][:producer_ids].reject!(&:empty?) if params[:movie][:producer_ids]
     end
 
     def movie_params

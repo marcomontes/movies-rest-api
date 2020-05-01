@@ -1,23 +1,157 @@
+# MOVIES
+###### REST API for movie & people managment
+
+##### Project Requirements:
+``ruby 2.5.7, PostgreSQL``
+
+##### How to run this project locally:
+1. Clone the repository
+2. Run bundle install command:
+``bundle install``
+3. Setup postgres database connection using this file:
+``config/database.yml``
+4. Run this commands:
+* ``rails db:create``
+* ``rails db:migrate``
+* ``rails db:seed``
+
+4. Run server server using: ``rails s``
+
+##### Some useful commands/links:
+* Run Tests: ``rake spec``
+* [Heroku version of this project](https://cinema-rest-api.herokuapp.com/)
+``EMAIL: admin@admin.com PASS: 4DM1N_W3B``
+* Postman collection: [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/)
+
+##### API Endpoints examples:
+---
+
+```javascript
+// GET Movies
+GET https://movies-rest-api-marco.herokuapp.com/api/v1/movies
+    
+RESPONSE
+
+    
+```
+
+```javascript
+// GET Movie
+GET https://movies-rest-api-marco.herokuapp.com/api/v1/movies/1
+    
+RESPONSE
+
+    
+```
+
+```javascript
+// CREATE Movie - Require Authentication
+POST https://movies-rest-api-marco.herokuapp.com/api/v1/movies
+
+    {
+      "movie": {
+        "title":		"Harry Pooter 1",
+        "release_year": 2001,
+        "casting_ids":	["10", "11"],
+        "director_ids": ["12"],
+        "producer_ids": ["13"]
+      }
+    }
+
+RESPONSE
+
+    
+```
+
+```javascript
+// UPDATE Movie - Require Authentication
+PUT https://movies-rest-api-marco.herokuapp.com/api/v1/movies/1
+
+    {
+      "movie": {
+        "title":		"Harry Pooter and",
+        "release_year": 2001,
+        "casting_ids":	["10", "11"],
+        "director_ids": ["12"],
+        "producer_ids": ["13"]
+      }
+    }
+
+RESPONSE
+
+    
+```
+
+```javascript
+// DELETE Movie - Require Authentication
+DELETE https://movies-rest-api-marco.herokuapp.com/api/v1/movies/1
+    
+RESPONSE
+
+    
+```
+
+
+```javascript
+// GET People
+GET https://movies-rest-api-marco.herokuapp.com/api/v1/people
+    
+RESPONSE
+
+    
+```
+
+```javascript
+// GET Person
+GET https://movies-rest-api-marco.herokuapp.com/api/v1/people/1
+    
+RESPONSE
+
+    
+```
+
+```javascript
+// CREATE Person - Require Authentication
+POST https://movies-rest-api-marco.herokuapp.com/api/v1/persons
+
+
+
+RESPONSE
+
+    
+```
+
+```javascript
+// UPDATE Person - Require Authentication
+PUT https://movies-rest-api-marco.herokuapp.com/api/v1/people/1
+
+
+
+RESPONSE
+
+    
+```
+
+```javascript
+// DELETE Movie - Require Authentication
+DELETE https://movies-rest-api-marco.herokuapp.com/api/v1/people/1
+    
+RESPONSE
+
+    
+```
+
+
+
+##### LIbraris/Frameworks Uesd:
+* [devise](https://github.com/rack/rack)
+* [devise-jwt](https://github.com/ruby-grape/grape)
+* [active_model_serializers](https://github.com/jeremyevans/sequel)
+* [Bootstrap](https://github.com/dry-rb/dry-transaction)
+* [Selec2]
+
+
+
+
 JSON Web Token is a great solution for user authentication. It‘s a well documented standard that has many implementation across almost all popular programming languages including Ruby.
-
-
-curl -i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' --data '{"api_user": {"email":"admin@admin.com","password":"4DM1N_W3B"}}' http://localhost:3000/api/login.json
-
-HTTP/1.1 200 OK
-X-Frame-Options: SAMEORIGIN
-X-XSS-Protection: 1; mode=block
-X-Content-Type-Options: nosniff
-X-Download-Options: noopen
-X-Permitted-Cross-Domain-Policies: none
-Referrer-Policy: strict-origin-when-cross-origin
-Content-Type: application/json; charset=utf-8
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJkMGQ5MzFjMS05ZGQ1LTRmMDEtOTlkYy1mNTFlOTE0MDBhMTYiLCJzdWIiOiIxIiwic2NwIjoiYXBpX3VzZXIiLCJhdWQiOm51bGwsImlhdCI6MTU4ODI4MjYzMiwiZXhwIjoxNTg4MzY5MDMyfQ.b5IJWBFrndsKCSNctg_4MFyPw8twgYJv9A00jnzVdXw
-ETag: W/"ce4cda80d5f4832d75cbf1f780be2196"
-Cache-Control: max-age=0, private, must-revalidate
-Set-Cookie: _movies_rest_api_session=CHyhbiv0dBU0k2SL8fcHQh1C15kIyMoU5lyWnFsHqW%2FJjRAqQo3ClidjmtCPsLZistIAsemntPw79cof1eae0NOkYp6Vuqosa8BN8C9lHNZuXLOs1f%2BreO3vTJz7S3xjsnTTKcSuPRAgweeelgcbEuHY--ESvhU5VvnQTs%2BoA3--RJgkXtNOYzwpadc6iBwKVw%3D%3D; path=/; HttpOnly
-X-Request-Id: 0e62a9aa-b0e7-4275-ac20-995740eae04b
-X-Runtime: 0.475208
-Transfer-Encoding: chunked
-
-{"success":true,"jwt":"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJkMGQ5MzFjMS05ZGQ1LTRmMDEtOTlkYy1mNTFlOTE0MDBhMTYiLCJzdWIiOiIxIiwic2NwIjoiYXBpX3VzZXIiLCJhdWQiOm51bGwsImlhdCI6MTU4ODI4MjYzMiwiZXhwIjoxNTg4MzY5MDMyfQ.b5IJWBFrndsKCSNctg_4MFyPw8twgYJv9A00jnzVdXw","response":"Authentication successful"}
 

@@ -43,10 +43,10 @@ class PeopleController < ApplicationController
     end
 
     def clean_params
-      params[:person][:aliases].reject!(&:empty?)
-      params[:person][:movies_as_actor_ids].reject!(&:empty?)
-      params[:person][:movies_as_director_ids].reject!(&:empty?)
-      params[:person][:movies_as_producer_ids].reject!(&:empty?)
+      params[:person][:aliases].reject!(&:empty?)                if params[:person][:aliases]
+      params[:person][:movies_as_actor_ids].reject!(&:empty?)    if params[:person][:movies_as_actor_ids]
+      params[:person][:movies_as_director_ids].reject!(&:empty?) if params[:person][:movies_as_director_ids]
+      params[:person][:movies_as_producer_ids].reject!(&:empty?) if params[:person][:movies_as_producer_ids]
     end
 
     def person_params
