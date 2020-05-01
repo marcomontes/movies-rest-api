@@ -21,7 +21,7 @@
 * Run Tests: ``rails test``
 * [Heroku version of this project](https://movies-rest-api-marco.herokuapp.com/)
 ``EMAIL: admin@admin.com PASS: 4DM1N_W3B``
-* Postman collection: [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/)
+* Postman collection: [![Run in Postman](https://run.pstmn.io/button.svg)](https://www.getpostman.com/collections/a4afab3aaa14ae4a3986)
 
 ##### API Endpoints examples:
 ---
@@ -700,6 +700,19 @@ RESPONSE
       "movies_as_producer": []
   }
     
+```
+
+```javascript
+// API LOGIN
+POST https://movies-rest-api-marco.herokuapp.com/api/login.json
+
+  {	
+      "api_user": {
+          "email":"admin@admin.com",
+          "password":"4DM1N_W3B"
+      }
+  }
+
 ```
 
 ##### LIbraris/Frameworks Uesd:
