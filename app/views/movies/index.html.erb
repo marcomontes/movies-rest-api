@@ -21,11 +21,11 @@
   <tbody>
     <% @movies.each do |movie| %>
       <tr>
-        <td><%= movie.title %></td>
-        <td><%= movie.release_year.roman %></td>
-        <td><%= movie_casting(movie) %></td>
-        <td><%= movie_directors(movie) %></td>
-        <td><%= movie_producers(movie) %></td>
+        <td><small><%= movie.title %></small></td>
+        <td><small><%= movie.release_year.roman %></small></td>
+        <td><small><%= movie_casting(movie) %></small></td>
+        <td><small><%= movie_directors(movie) %></small></td>
+        <td><small><%= movie_producers(movie) %></small></td>
         <td><%= link_to 'Edit', edit_movie_path(movie), class: "btn btn-outline-secondary btn-sm" %></td>
         <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %></td>
       </tr>

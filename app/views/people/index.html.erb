@@ -22,12 +22,12 @@
   <tbody>
     <% @people.each do |person| %>
       <tr>
-        <td><%= person.first_name %></td>
-        <td><%= person.last_name %></td>
-        <td><%= person.alias_names %></td>
-        <td><%= movies_as_actor(person) %></td>
-        <td><%= movies_as_director(person) %></td>
-        <td><%= movies_as_producer(person) %></td>
+        <td><small><%= person.first_name %></small></td>
+        <td><small><%= person.last_name %></small></td>
+        <td><small><%= person.alias_names %></small></td>
+        <td><small><%= movies_as_actor(person) %></small></td>
+        <td><small><%= movies_as_director(person) %></small></td>
+        <td><small><%= movies_as_producer(person) %></small></td>
         <td><%= link_to 'Edit', edit_person_path(person), class: "btn btn-outline-danger btn-sm" %></td>
         <td><%= link_to 'Destroy', person_path(person), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-secondary btn-sm" %></td>
       </tr>
