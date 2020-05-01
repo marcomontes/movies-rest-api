@@ -23,12 +23,12 @@
 ``EMAIL: admin@admin.com PASS: 4DM1N_W3B``
 * Postman collection: [![Run in Postman](https://run.pstmn.io/button.svg)](https://www.getpostman.com/collections/a4afab3aaa14ae4a3986)
 
-##### Libraries/Frameworks Uesd:
-* [devise] Used for authentication. (Excellent Gem, used in a lot of projects, with good support and documentation.)
-* [devise-jwt] Used for authentication using JSON Web Token on API (It‘s a well documented standard that has many implementation across almost all popular programming languages including Ruby.)
-* [active_model_serializers] (An easy way to render JSON data on API responses.)
-* [Bootstrap] (Very common open-source toolkit for Frontend development, used in a lot of projects, with excellent support, documentation and free resources.)
-* [Selec2] (Good replacement for HTML select boxes, customizable and with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options.)
+##### Libraries/Frameworks Used:
+* **devise** Used for authentication. (Excellent Gem, used in a lot of projects, with good support and documentation.)
+* **devise-jwt** Used for authentication using JSON Web Token on API (It‘s a well documented standard that has many implementation across almost all popular programming languages including Ruby.)
+* **active model serializers** (An easy way to render JSON data on API responses.)
+* **Bootstrap** (Very common open-source toolkit for Frontend development, used in a lot of projects, with excellent support, documentation and free resources.)
+* **Selec2** (Good replacement for HTML select boxes, customizable and with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options.)
 
 
 ##### API Endpoints examples:
