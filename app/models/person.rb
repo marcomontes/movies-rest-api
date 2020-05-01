@@ -8,7 +8,7 @@ class Person < ApplicationRecord
   validates :first_name, :last_name, presence: true
 
   def alias_names
-    aliases.join(',')
+    aliases.join(', ')
   end
 
   def full_name
