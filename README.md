@@ -35,6 +35,20 @@
 ---
 
 ```javascript
+// API LOGIN
+POST https://movies-rest-api-marco.herokuapp.com/api/login.json
+
+  {	
+      "api_user": {
+          "email":"admin@admin.com",
+          "password":"4DM1N_W3B"
+      }
+  }
+
+```
+---
+
+```javascript
 // GET Movies
 GET https://movies-rest-api-marco.herokuapp.com/api/v1/movies
     
@@ -708,17 +722,4 @@ RESPONSE
       "movies_as_producer": []
   }
     
-```
-
-```javascript
-// API LOGIN
-POST https://movies-rest-api-marco.herokuapp.com/api/login.json
-
-  {	
-      "api_user": {
-          "email":"admin@admin.com",
-          "password":"4DM1N_W3B"
-      }
-  }
-
 ```
